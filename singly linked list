@@ -1,0 +1,106 @@
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def insert_end(self, data):
+        new_node = Node(data)
+        if not self.head:
+            self.head = new_node
+            return
+        temp = self.head
+        while temp.next:
+            temp = temp.next
+        temp.next = new_node
+
+    def insert_beginning(self, data):
+        new_node = Node(data)
+        new_node.next = self.head
+        self.head = new_node
+
+    def insert_at_position(self, data, pos):
+        if pos <= 0:
+            print("Invalid position")
+            return
+        new_node = Node(data)
+        if pos == 1:
+            self.insert_beginning(data)
+            return
+        temp = self.head
+        for _ in range(pos - 2):
+            if not temp:
+                print("Position out of range")
+                return
+            temp = temp.next
+        new_node.next = temp.next
+        temp.next = new_node
+
+    def delete_node(self, key):
+        temp = self.head
+        if temp and temp.data == key:
+            self.head = temp.next
+            return
+        prev = None
+        while temp and temp.data != key:
+            prev = temp
+            temp = temp.next
+        if temp:
+            prev.next = temp.next
+
+    def display(self):
+        elements = []
+        temp = self.head
+        while temp:
+            elements.append(temp.data)
+            temp = temp.next
+        print("Linked List:", " -> ".join(elements))
+
+    def search(self, key):
+        temp = self.head
+        pos = 1
+        while temp:
+            if temp.data == key:
+                print(f"'{key}' found at position {pos}")
+                return
+            temp = temp.next
+            pos += 1
+        print(f"'{key}' not found in the list")
+
+# Create the initial list
+ll = LinkedList()
+for item in ["Chocolate", "Cake", "Biscuits", "Brownie", "Ice cream"]:
+    ll.insert_end(item)
+
+# 2. Display the linked list
+ll.display()
+
+# 3. Insert at beginning (Coffee)
+ll.insert_beginning("Coffee")
+
+# 4. Insert at end (Chicken Biryani)
+ll.insert_end("Chicken Biryani")
+
+# 5. Insert at 3rd position
+ll.insert_at_position("Sandwich", 3)
+
+# 6. Display the elements
+ll.display()
+
+# 7. Delete 'Coffee'
+ll.delete_node("Coffee")
+
+# 8. Delete 'Chicken Biryani'
+ll.delete_node("Chicken Biryani")
+
+# 9. Delete 'Brownie'
+ll.delete_node("Brownie")
+
+# 10. Display the list
+ll.display()
+
+# 11. Search 'Ice cream' and display position
+ll.search("Ice cream")
