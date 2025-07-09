@@ -70,37 +70,26 @@ class LinkedList:
             pos += 1
         print(f"'{key}' not found in the list")
 
-# Create the initial list
-ll = LinkedList()
+ ll = LinkedList()
 for item in ["Chocolate", "Cake", "Biscuits", "Brownie", "Ice cream"]:
     ll.insert_end(item)
 
-# 2. Display the linked list
-ll.display()
+ ll.display()
 
-# 3. Insert at beginning (Coffee)
-ll.insert_beginning("Coffee")
+ ll.insert_beginning("Coffee")
 
-# 4. Insert at end (Chicken Biryani)
-ll.insert_end("Chicken Biryani")
+ ll.insert_end("Chicken Biryani")
 
-# 5. Insert at 3rd position
-ll.insert_at_position("Sandwich", 3)
+ ll.insert_at_position("Sandwich", 3)
 
-# 6. Display the elements
-ll.display()
+ ll.display()
 
-# 7. Delete 'Coffee'
-ll.delete_node("Coffee")
+ ll.delete_node("Coffee")
 
-# 8. Delete 'Chicken Biryani'
-ll.delete_node("Chicken Biryani")
+ ll.delete_node("Chicken Biryani")
 
-# 9. Delete 'Brownie'
-ll.delete_node("Brownie")
+ ll.delete_node("Brownie")
 
-# 10. Display the list
-ll.display()
+ ll.display()
 
-# 11. Search 'Ice cream' and display position
-ll.search("Ice cream")
+ ll.search("Ice cream")
