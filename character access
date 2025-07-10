@@ -1,0 +1,6 @@
+ #include <stdio.h>
+ #include <string.h>
+ void main(){
+      char a[]="chocolate";
+      printf("the second letter of %s is :%c",a,a[4]);
+ }
