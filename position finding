@@ -1,0 +1,12 @@
+ #include <stdio.h>
+ #include <ctype.h>
+ #include<string.h>
+ voi  ,,d main(){
+       char a[]="ascer";
+       int len=strlen(a);
+        for(int i=0;i<len;i++){
+           a[i]=toupper(a[i]);
+        }
+        printf("the upper string is  : %s\n",a);
+       }
+ 
