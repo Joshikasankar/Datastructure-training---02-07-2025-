@@ -1,0 +1,8 @@
+ #include <stdio.h>
+ #include <string.h>
+ void main(){
+       char a[]="apple";
+       for (int i=0;i<=strlen(a)-1;i++){
+           printf("the traversal of %s is : %c\n",a,a[i]);
+       }
+ }
