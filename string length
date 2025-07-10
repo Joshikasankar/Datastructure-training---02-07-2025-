@@ -1,0 +1,7 @@
+ #include <stdio.h>
+ #include <string.h>
+ void main(){
+     char brand[]="lenovo";
+     int length=strlen(brand);
+     printf("  the length of {brand} is : %d",length);
+ }
